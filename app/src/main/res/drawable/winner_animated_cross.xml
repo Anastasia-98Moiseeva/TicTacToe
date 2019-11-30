@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animated-vector
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:drawable="@drawable/cross"
+    tools:ignore="NewApi">
+
+    <target
+        android:animation="@animator/cross_winner_animation"
+        android:name="cross_front_line"/>
+
+    <target
+        android:animation="@animator/cross_winner_animation"
+        android:name="cross_back_line"/>
+
+</animated-vector>

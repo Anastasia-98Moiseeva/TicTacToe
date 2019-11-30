@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@color/white"
+    tools:context=".MainActivity">
+
+    <com.example.tictactoe.TicTacToeField
+        android:id="@+id/tic_tac_toe_field"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="@dimen/default_margin"
+        android:columnCount="3"
+        android:background="@color/colorGr"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_margin="@dimen/card_view_margin"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/cross_win_number"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:drawableTop="@drawable/cross"
+            android:text="0"
+            android:textColor="@color/colorGray"
+            android:textSize="@dimen/txt_size"
+            android:gravity="center_horizontal" />
+
+        <TextView
+            android:id="@+id/circle_win_number"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:drawableTop="@drawable/circle"
+            android:text="0"
+            android:textColor="@color/colorGray"
+            android:textSize="@dimen/txt_size"
+            android:gravity="center_horizontal" />
+
+    </LinearLayout>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_margin="@dimen/card_view_margin"
+        card_view:cardCornerRadius="@dimen/card_view_radius">
+
+        <LinearLayout
+            android:id="@+id/winner_field"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@color/colorGreenGray"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/txt_winner"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/card_view_margin"
+                android:textAlignment="center"
+                android:layout_gravity="center_horizontal"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:layout_margin="@dimen/default_margin">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:layout_margin="@dimen/card_view_margin"
+                    card_view:cardCornerRadius="@dimen/card_view_radius">
+
+                    <Button
+                        android:id="@+id/btn_restart"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@color/colorGr"
+                        android:textColor="@color/colorGray"
+                        android:text="@string/new_game"/>
+                </androidx.cardview.widget.CardView>
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+</FrameLayout>
